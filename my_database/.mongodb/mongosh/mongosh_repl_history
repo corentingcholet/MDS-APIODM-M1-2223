@@ -1,0 +1,77 @@
+show collections
+db.getCollection('films').find()
+db.getCollection('planets').find()
+db.getCollection('cats').find()
+db.getCollection('films').find()
+show collections
+db.getCollection('film').find()
+db.getCollection('peoples').find()
+peoples.collection.find()
+swappi.collection.find
+show dbs
+peoples.find()
+swappi.peoples.find()
+show collections
+use swappi
+show collections
+show collection
+show dbs
+db.vehicles.count()
+db.starships.count()
+db.species.count()
+db.planets.count()
+show collections
+db.films.count()
+db.peoples.count()
+db.peoples.count
+db.peoples.find()
+db.films.find()
+show collections
+ls
+use swappi
+show dbs
+db.swappi.find({})
+db.swappi.find()
+show dbs
+use swappi
+db
+db.admin.count({})
+db.admin.find({})
+quit
+ls
+db.admin.countDocuments()
+db.swappi.countDocuments()
+swappi.countDocuments()
+db.swappi.countDocument()
+swappi.countDocument()
+swappi.count()
+db.swappi.count({})
+db.swappi.find({})
+swappi.find({})
+use swappi
+show dbs
+db.swappi.find({})
+use swappi
+exit
+db.swappi.deleteMany({})
+db.swappi.findAll({})
+db.swappi.deleteMany({})
+db.swappi.remove()
+db.swappi.remove
+db.swappi.find().toArray()
+db.swappi.find({}).toArray()
+db.swappi.find().toArray
+db.swappi.find()
+db.swappi.find().skip(0).take(2)
+db.collection("swappi").find({})
+db.swappi.count({})
+db.swappi.cout({})
+db.swappi.cout()
+db.swappi.find()
+db.swappi.find({})
+use swappi
+show databases
+exit
+use swappi
+cls
+show databases

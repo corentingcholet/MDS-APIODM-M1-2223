@@ -1,0 +1,1242 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Star Wars REST API with Swagger",
+    "version": "0.1.0",
+    "description": "Welcome to the swapi, the Star Wars API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests.",
+    "license": {
+      "name": "MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    },
+    "contact": {
+      "name": "Corentin Goujon-Cholet",
+      "email": "corentingcholet@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "People",
+      "description": "API for peoples"
+    },
+    {
+      "name": "Film",
+      "description": "API for films"
+    },
+    {
+      "name": "Planet",
+      "description": "API for planets"
+    },
+    {
+      "name": "Specie",
+      "description": "API for species"
+    },
+    {
+      "name": "Starship",
+      "description": "API for starships"
+    },
+    {
+      "name": "Vehicle",
+      "description": "API for vehicles"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "People": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "birth_year": {
+            "type": "string"
+          },
+          "eye_color": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "hair_color": {
+            "type": "string"
+          },
+          "height": {
+            "type": "string"
+          },
+          "mass": {
+            "type": "string"
+          },
+          "skin_color": {
+            "type": "string"
+          },
+          "homeworld": {
+            "type": "string"
+          },
+          "films": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "species": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "starships": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Film": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "number"
+          },
+          "opening_crawl": {
+            "type": "string"
+          },
+          "director": {
+            "type": "string"
+          },
+          "producer": {
+            "type": "string"
+          },
+          "release_date": {
+            "type": "string"
+          },
+          "species": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "starships": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "characters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "planets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "Planet": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "diameter": {
+            "type": "string"
+          },
+          "rotation_period": {
+            "type": "string"
+          },
+          "orbital_period": {
+            "type": "string"
+          },
+          "gravity": {
+            "type": "string"
+          },
+          "population": {
+            "type": "string"
+          },
+          "climate": {
+            "type": "string"
+          },
+          "terrain": {
+            "type": "string"
+          },
+          "surface_water": {
+            "type": "string"
+          },
+          "residents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "film": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "Specie": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "designation": {
+            "type": "string"
+          },
+          "average_height": {
+            "type": "string"
+          },
+          "average_lifespan": {
+            "type": "string"
+          },
+          "eye_colors": {
+            "type": "string"
+          },
+          "hair_colors": {
+            "type": "string"
+          },
+          "skin_colors": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "homeworld": {
+            "type": "string"
+          },
+          "people": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "films": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "Starship": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "starship_class": {
+            "type": "string"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "cost_in_credits": {
+            "type": "string"
+          },
+          "length": {
+            "type": "string"
+          },
+          "crew": {
+            "type": "string"
+          },
+          "passengers": {
+            "type": "string"
+          },
+          "max_atmosphering_speed": {
+            "type": "string"
+          },
+          "hyperdrive_rating": {
+            "type": "string"
+          },
+          "MGLT": {
+            "type": "string"
+          },
+          "cargo_capacity": {
+            "type": "string"
+          },
+          "consumables": {
+            "type": "string"
+          },
+          "films": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pilots": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "Vehicle": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "vehicle_class": {
+            "type": "string"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "cost_in_credits": {
+            "type": "string"
+          },
+          "crew": {
+            "type": "string"
+          },
+          "passengers": {
+            "type": "string"
+          },
+          "max_atmosphering_speed": {
+            "type": "string"
+          },
+          "cargo_capacity": {
+            "type": "string"
+          },
+          "consumables": {
+            "type": "string"
+          },
+          "films": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pilots": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/api/film": {
+      "post": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Get all films",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Film"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Get all film",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Delete all Films",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/film/{id}": {
+      "get": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Get film by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The film id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Modify film by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The film id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Film"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Film"
+        ],
+        "description": "Delete film by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The film id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/people": {
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "description": "Insert people",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/People"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "description": "Get all peoples",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "description": "Delete all peoples",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/people/{id}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "description": "Get people by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of people to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "People"
+        ],
+        "description": "Modify people by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The people id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/People"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "description": "Delete people by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The people id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/planet": {
+      "post": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Get all planets",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Planet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Get all planet",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Delete all Planets",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/planet/{id}": {
+      "get": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Get planet by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The planet id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Modify planet by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The planet id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Planet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Planet"
+        ],
+        "description": "Delete planet by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The planet id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/specie": {
+      "post": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Get all species",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Specie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Get all specie",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Delete all Species",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/specie/{id}": {
+      "get": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Get specie by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The specie id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Modify specie by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The specie id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Specie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Specie"
+        ],
+        "description": "Delete specie by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The specie id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/starship": {
+      "post": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Get all starships",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Starship"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Get all starship",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Delete all Starships",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/starship/{id}": {
+      "get": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Get starship by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The starship id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Modify starship by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The starship id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Starship"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Starship"
+        ],
+        "description": "Delete starship by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The starship id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/vehicle": {
+      "post": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Get all vehicles",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Vehicle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Get all vehicle",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Delete all Vehicles",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/api/vehicle/{id}": {
+      "get": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Get vehicle by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The vehicle id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Modify vehicle by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The vehicle id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Vehicle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Vehicle"
+        ],
+        "description": "Delete vehicle by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The vehicle id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    }
+  }
+}
